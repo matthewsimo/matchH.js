@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+<title>matchH Demo</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="style/css/style.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js" type="text/javascript"></script>
+<script src="style/js/matchH.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Get #item_1 & match it's height specifically to #item_2, unless it's already larger.
+  $('#item_1').matchH('#item_2'); 
+
+// Get #item_a, #item_b, #item_c & auto-match their height to tallest
+  $('#item_a, #item_b, #item_c').matchH();
+
+// Get #item_i, #item_ii, #item_iii & match to #match_children_to_parent
+  $('#item_i, #item_ii, #item_iii').matchH('#match_children_to_parent');
+
+// OR auto-match to the tallest of the collection.
+  $('#item_x, #item_y, #item_z').matchH('#match_to_item');
+
+});
+
+</script>
+
+</head>
+<body>
+
+<div class="wrapper">
+  <div id="info">
+    <h1>What The Heck is Happening Here?</h1>
+    <p>This is a demonstration of the simple jQuery plugin matchH. matchH does exactly what it sounds like, it'll take an element or set of elements & set it's (or their) height to a target element, or the tallest of the element's passed to it.</p>
+  </div>
+
+  <div id="match_to_item" class="item_wrapper clearfix">
+    <div id="item_1" class="block"><p>Matching this Element's height specifically to item 2, which happens to be a sibling.</p></div>
+    <div id="item_2" class="block"><p>This Item isn't being effected by matchH but is being used as a reference.</p></div>
+  </div>
+
+  <div id="match_siblings_to_tallest" class="item_wrapper clearfix">
+    <div id="item_a" class="block"><p>You can alternatively, pass multiple elements and let matchH figure out the largest and match to that element.</p></div>
+    <div id="item_b" class="block"><p>You can alternatively, pass multiple elements and let matchH figure out the largest and match to that element.</p></div>
+    <div id="item_c" class="block"><p>You can alternatively, pass multiple elements and let matchH figure out the largest and match to that element.</p></div>
+  </div>
+
+  <div id="match_children_to_parent" class="item_wrapper clearfix">
+    <div id="item_i" class="block"><p>Matching this element's height not to it's siblings, but specifically it's parent - #match_children_to_parent.</p></div>
+    <div id="item_ii" class="block"><p>Matching this element's height not to it's siblings, but specifically it's parent - #match_children_to_parent.</p></div>
+    <div id="item_iii" class="block"><p>Matching this element's height not to it's siblings, but specifically it's parent - #match_children_to_parent.</p></div>
+  </div>
+
+  <div id="match_children_to_another" class="item_wrapper clearfix">
+    <div id="item_x" class="block"><p>Matching this element's height not to it's siblings, but to #match_to_item - a completely unrelated element (Which is too short - so matchH defaults to tallest of the elements passed to it.).</p></div>
+    <div id="item_y" class="block"><p>Matching this element's height not to it's siblings, but to #match_to_item - a completely unrelated element (Which is too short - so matchH defaults to tallest of the elements passed to it.).</p></div>
+    <div id="item_z" class="block"><p>Matching this element's height not to it's siblings, but to #match_to_item - a completely unrelated element (Which is too short - so matchH defaults to tallest of the elements passed to it.).</p></div>
+  </div>
+
+</div>
+
+</body>
+</html>

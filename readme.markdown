@@ -7,7 +7,7 @@ to a target element, or the tallest of the element's passed to it.
 
 ## Quick Example
 
-$('#some_element).matchH('#target_element');
+$('#some_element').matchH('#target_element');
 
 It's that easy! You might find it easier to "read" that line as: 
 "Get #some_element and Match Height to #target_element."
